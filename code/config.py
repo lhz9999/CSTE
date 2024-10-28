@@ -8,12 +8,12 @@ TORCH_SEED = 129
 
 
 
-DATA_DIR_yanbao = '/data1/lhz/medical_bert/yanbao/toyhom'
+DATA_DIR_yanbao = '/data1/lhz/medical_bert/yanbao/medical_dialogue'
 
-TRAIN_FILE_yanbao = 'doctor_xi_train.txt'
-TEST_FILE_yanbao = 'doctor_xi_test.txt'
-TRAIN_FILE_yanbao_summary_75 = 'patient_xi_train.txt'
-TEST_FILE_yanbao_summary_75 = 'patient_xi_test.txt'
+TRAIN_FILE_yanbao = 'train_doctor_for_CSTE.txt'
+TEST_FILE_yanbao = 'test_doctor_for_CSTE.txt'
+TRAIN_FILE_yanbao_summary_75 = 'train_patient_for_CSTE.txt'
+TEST_FILE_yanbao_summary_75 = 'test_patient_for_CSTE.txt'
 
 
 
@@ -40,7 +40,7 @@ class Config(object):
         self.overlap_len =0#25
 
         self.epochs = 10
-        self.lr = 2e-5 
+        self.lr = 3e-5 
         self.other_lr = 2e-4
         self.batch_size = 16
         self.gradient_accumulation_steps = 2
@@ -50,7 +50,7 @@ class Config(object):
         self.warmup_proportion = 0.05 #0.1
         self.adam_epsilon = 1e-8
         self.bert_output_dim = 768
-        self.num_classes = 185 #
+        self.num_classes = 14 #
         self.max_length = 300#
         self.max_length_summary = 300
         self.lstm_hidden_dim = 512
@@ -58,8 +58,8 @@ class Config(object):
         self.focal_loss_gamma = 2.
         self.focal_loss_alpha = None
 
-        self.save_path = "/data1/lhz/medical_bert/bert_model_save/CSTE_0721_xi.ckpt"
-        self.log_save_path = "/data1/lhz/medical_bert/bert_model_save/CSTE_0721_xi.txt"
+        self.save_path = "/data1/lhz/medical_bert/compare_with_llm/CSTE_triage_vs_llm.ckpt"
+        self.log_save_path = "/data1/lhz/medical_bert/compare_with_llm/CSTE_triage_vs_llm.txt"
 
         # Normal part
         self.normal_batch_size = 32

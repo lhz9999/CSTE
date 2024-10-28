@@ -57,13 +57,13 @@ def run(configs):
 
     # load model
 
-    model = new_dual_BERT_for_medical(configs)
+    model = CSTE_for_medical(configs)
     summary(model)
 
     # device_ids = [1,2]
     model = model.cuda()
     model = nn.DataParallel(model, device_ids=[0, 1])
-      no_decay = ['bias', 'gamma', 'beta']
+    no_decay = ['bias', 'gamma', 'beta']
     params = model.parameters()
     optimizer = AdamW(params, lr=configs.lr)
         # 线性warmup然后线性衰减
@@ -147,7 +147,7 @@ def run(configs):
                 configs, model, test_loader)
             if epoch == 0:
                 a = np.array(labels_all)
-                np.save('/data1/lhz/medical_bert/predict_result_save/labels_all_1.npy', a)
+                np.save('/data1/lhz/medical_bert/compare_with_llm/labels_all_1.npy', a)
                 # a = np.load('a.npy')
                 # a = a.tolist()
 
@@ -162,7 +162,7 @@ def run(configs):
             if dev_acc > dev_best_acc:
                 dev_best_acc = dev_acc
                 b = np.array(predict_all)
-                np.save('/data1/lhz/medical_bert/predict_result_save/predict_all_1.npy', b)
+                np.save('/data1/lhz/medical_bert/compare_with_llm/predict_all_1.npy', b)
 
             if dev_recall > dev_best_recall:
                 dev_best_recall = dev_recall

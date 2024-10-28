@@ -16,7 +16,7 @@ from torchtext.data import get_tokenizer
 def build_train_data(configs):
     # train_dataset = yanbao_Dataset(configs, data_type='train')
     # train_dataset = yanbao_yanbao_BERT_summary_DatasetBERT_Dataset(configs, data_type='train')
-    train_dataset = (configs, data_type='train')
+    train_dataset = yanbao_BERT_summary_Dataset(configs, data_type='train')
     train_loader = torch.utils.data.DataLoader(dataset=train_dataset.get_data(), batch_size=configs.batch_size,
                                                shuffle=True)
     return train_loader
