@@ -3,9 +3,9 @@
 ## Environment
 
 * python  3.7
-* torch  1.7.1
+* torch  1.7.1 + cu110
 * transformers   4.10.1
-* numpy 1.19.5
+* numpy 1.21.6
 
 ## Usage
 
