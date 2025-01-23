@@ -24,6 +24,6 @@ We have collected millions of medical conversations from an online medical consu
 ![Triage Dataset](./raw_data/CMTD_triage.jpg "Triage Dataset")
 ![Diagnosis Dataset](./raw_data/CMTD_diagnoisis.jpg "Diagnosis Dataset")
 
-The raw texts and preprocessed data will be publicly available in the near future. If you want to use this dataset, please request my supervisor at qkpeng@xjtu.edu.cn.
+The raw texts and preprocessed data will be publicly available in the near future.
 
 
